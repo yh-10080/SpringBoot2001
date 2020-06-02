@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class TestSpringBoot {
 
+	/**
+	 * 127.0.0.1/test.desc
+	 * @return
+	 */
 	@RequestMapping("/test/desc")
 	@ResponseBody
 	public String addTestDsce(){
