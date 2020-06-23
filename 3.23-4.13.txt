@@ -1,0 +1,230 @@
+
+【16811】
+
+【快捷方式】
+ctrl+shift+f 格式化代码
+ctrl+shift+o 去除没有用到的引用
+ctrl+shift+m 导入需要的类的引用
+alt+shift+r 重命名
+alt+shift+x 转换大写
+alt+shift+y 转换小写
+ctrl+shift+上下行 向上或者下复制当前行
+alt+上下键 向上/下替换行
+ctrl+shift+l 万能快捷键
+ctrl+shift+o 导入需要的包
+ctrl+alt+shift 自选择竖条范围内内容
+【SVN】
+SVN是一个自由开源的版本控制系统。将文件存储在中心版本库中，这个版本库很像一个普通的文件服务器，但可以记录每一次文件和目录的修改情况，这样可以借此将数据恢复到以前的版本们
+
+maven高级编程
+是Apache公司的一个开源项目，是项目的构建工程，是项目的建构工具，用来依赖管理。
+
+为什么学习maven：管理我们的jar包
+增加我们的第三方jar包（自动构建） jar包之间的依赖关系
+
+【maven常用命令】
+mvn compile 编译命令（只是编译maven main 目录的文件夹）
+例：若maven项目中POM.XMLW文件中有依赖MYSQL，然后再在我们的DOS环境下，CMD中输入编译命令：mvn compile，返回本地仓库若没有我们下载的jar包，就会自动从中央仓库自动下载。自动构建项目
+
+mvn test 测试命令
+
+mvn package打包命令（Java项目-》只打jar包， web项目-》打包打成WAR包）项目生成在target文件夹中
+
+mvn install 安装命令 将开发的模块，加入到本地仓库，工其他模块的使用。
+
+mvn claen 清除命令 清除target文件夹
+
+**-mvn 依赖，在eclipse中使用mvn及mvn生命周期：
+依赖范围和依赖的有效性
+compoile(编译默认)、test（测试）、provided（部署），且运行时各自运行一套classpath
+
+**-在eclipse中运行maven命令，如：清除【clean】选中maven项目，右键选择run as （第6个选项）
+【maven生命周期】
+针对所有的构建过程进行抽象统一，包含了项目的清理、初始化、编译、测试、打包、集成测试、验证validate、部署和站点生成等几乎所有
+三套生命周期
+清理clean
+default生命周期：
+site
+
+【maven常用命令的执行范围】
+编译、测试、打包、安装、发布
+
+【依赖排除、maven整合多个模块】
+将项目打包成一个jar包，另外一个项目通过jar包依赖实现后续项目工程。
+
+先用maven安装命令[maven install]先将该项目A打包安装成一个jar包放到本地仓库，B项目才可以通过依赖本地仓库中的A项目的jar包使用A项目
+
+【MVC框架】
+MVC是软件工程中的一种软件架构模式，它把软件系统分为模型、视图和控制器三个基本部分。用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。此模式透过对复杂度的简化，使程序结构更加直观。
+
+【补充：传统框架、微服务框架、微服务框架】
+传统框架：SSH（struts2+Spring+Hibernate）占市场大概10%[struts2表示化+Hibernate冬眠持久化框架 是全封装框架]
+流行框架：SSM（Spring MVC+Spring+MyBatis）50%[MyBatis持久数据库相关化框架+Spring连接也就是个业务 是半封装框架]
+微服务框架：Spring Boot（注解方式主流）40%
+
+MVC思想：
+
+视图-页面 控制层-servlet 模型层-实体
+
+【在web.xml配置过多servlet的坏处】消耗内存、启动时间长、消耗电脑资源、存在并发量的问题。
+使用spring mvc框架:解决servlet过多冗余问题
+【maven报错解决】
+1.将整个项目右键-pro..-utf-8
+2.右键项目构建build-libraries 构建jdk、tomcat、junit4到项目中
+通过pom.xml文件维护项目中的jar包，
+3.update project
+
+Sprinf mvc专门使用Model来保存设置数据
+
+【JDBC】
+JDBC编程步骤：
+?1、定义链接Connection对象
+?2、定义预处理对象
+?3、定义结果集
+?4、定义mysql驱动
+?5、定义库链接url
+?6、定义数据库名称
+?7、定义数据库密码
+?8、加载驱动
+?9、获取链接
+?10、定义SQL
+?11、开启事务
+?12、创建SQL预处理对象
+?13、设置参数
+?14、预处理对象操作SQL查询数据库，返回结果集对象集合。
+?15、遍历结果集对象
+?16、提交事务
+?17、回滚事务
+?18、关闭资源
+
+
+【MyBatis】
+MyBatis的前身就是ibatis，本身是Apache开源项目，2010年这个项目由Apache公司迁移到Google code 并且改名为MyBatis。
+MyBatis是一个数据持久层框架（O/RM），MyBatis是把实体类和sql语句之间建立映射关系，Hibernate是把实体类和数据库表之间建立映射之间。
+
+【MyBatis主要完成两件事】
+一是根据jdbc的规范建立与数据库之间的连接。
+二是通过Annotation/xml+java反射技术，实现Java对象与数据库之间的转化关系。
+
+【MyBatis优点】
+1.基于sql语法，简单易学
+2.能够了解底层组装
+3.sql语句封装在配置文件中，便于统一管理与维护，降低程序的耦合度
+4.程序调试方便
+
+注意：//注释在doc文档中不会显示 应该采用
+1.创建mybatis.xml 
+2.创建实体user（数据库->表 手动维护->实体 称为O/R Mapping映射）
+3.创建user.xml创造映射文件
+
+【mybatis CRUD】目的：解决冗余
+重构：创建
+
+静态块、静态常量 程序启动的时候就创建调用
+
+【三大框架】
+
+
+【重构】
+Mapper接口：必须遵守一个规则--
+1.把userDao改名为--》UserMapper接口(后缀必须为:Mapper)
+2.将xml命名空间，现在找寻**Mapper类
+
+【Spring】
+介绍方式：
+1.从面到点的方式
+ 一系列功能的集承者：
+面：spring mvc、spring boot、spring cloud、spring security、data template以及测试模块unit test
+ioc:控制反转，谁控制了谁(容器控制了bean的生命周期)？怎么反转的(从new的方式变成了从依赖到注入)？
+aop:业务流，公用的逻辑、抽取形成独立的切面、横切的方式切入到指定的位置；
+事务处理：
+2.核心包
+core:
+aop:
+data access:
+web:
+test:
+【MVC】
+ M(model)和数据库表层一一控制
+ V(view)展示页面、手机端
+ C(controller)
+view--controller--service--data access(sql、nosql)--service--controller--view
+【Maven】
+eclipse配置
+远程jar仓库和本地jar仓库的概念
+如何通过pom，寻找本地jar概念
+接口测试工具：postman
+
+【spring boot】
+整合主流第三方框架，形成的快速开发框架。spring boot是基于MVC的maven项目
+  ssm框架：web项目--maven管理--web.xml(上下文、监听器、过滤器、servlet)
+  各种配置文件(applicationContext.xml、springMvcConfig.xml、springMybatis.xml、springHibernate.xml、springShiro.xml、)
+核心
+  快速搭建项目
+  pom管理：starter依赖形式，常用依赖，按组聚集在一起，形成单条依赖，以父子继承的方式解决版本问题
+  原则：习惯优于配置，spring boot因为大家都这么做了，就不需要再次进行，大大缩小了配置，没有web.xml。
+  bean的自动配置：采用注解化，对于Java那些无需配置没直接采用注解。
+  servlet容器：不需要外部的tomcat--servlet容器。直接使用内部封装好的servlet容器
+  为什么使用spring boot？
+配置、编码、部署变得简单。
+之前搭建框架很慢因为配置文件，习惯优于配置更方便编码，注解方式使用更加方便编码，兼容之前的方式，Java命令和jar包方式
+
+【mvc、boot、cloud的区别和联系】
+ mvc:web
+ boot:垂直应用的大集成者(框架)数据库-页面，web组件基于mvc，也就是包含mvc
+ cloud:是分布式应用框架，三维立体的运用，是多个垂直应用组成的。每个微服务都是spring boot核心注解
+  @SpringBootAllication--启动spring boot 工程的注解
+  @Configuration--配置类的注解，相当于之前的<bean></bean>
+  @PropertySource--读取配置文件
+  @Component--注册为spring组件
+  @Autowired || @Resource(name="***")
+  @Transactional --事务注解
+  @Aspect--aop注解
+  @Controller
+  @Service
+  @Repository
+spring boot框架搭建
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
